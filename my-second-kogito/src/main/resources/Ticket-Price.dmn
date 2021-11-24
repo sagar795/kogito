@@ -228,7 +228,7 @@
       <dmn:requiredDecision href="#_B3295D28-5C1E-4533-8518-E1CA8B5F7437"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_5103F3EA-A515-4CC4-B5FB-BB36FF16C3DF">
-      <dmn:text>"The price is " + Bonus</dmn:text>
+      <dmn:text>"The price is " + string(Bonus)</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_4B300FDE-7D25-4A21-8D25-750A20CFB4EE" name="bonus point">
@@ -478,6 +478,10 @@ else 45</dmn:text>
         <di:waypoint x="940" y="545"/>
         <di:waypoint x="742" y="469"/>
       </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_D6A2DC33-76BA-4B68-8B73-8C54C0AB5BC7-AUTO-TARGET" dmnElementRef="_D6A2DC33-76BA-4B68-8B73-8C54C0AB5BC7">
+        <di:waypoint x="741" y="570"/>
+        <di:waypoint x="742" y="469"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_2927034C-194B-4521-806C-31C4151E4B30" dmnElementRef="_2927034C-194B-4521-806C-31C4151E4B30">
         <di:waypoint x="987" y="467"/>
         <di:waypoint x="792" y="444"/>
@@ -485,10 +489,6 @@ else 45</dmn:text>
       <dmndi:DMNEdge id="dmnedge-drg-_B5B6699F-3BA9-47AE-8E98-7C0A25220CA5-AUTO-TARGET" dmnElementRef="_B5B6699F-3BA9-47AE-8E98-7C0A25220CA5">
         <di:waypoint x="987" y="363.6842105263158"/>
         <di:waypoint x="742" y="419"/>
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_D6A2DC33-76BA-4B68-8B73-8C54C0AB5BC7-AUTO-TARGET" dmnElementRef="_D6A2DC33-76BA-4B68-8B73-8C54C0AB5BC7">
-        <di:waypoint x="741" y="570"/>
-        <di:waypoint x="742" y="469"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_6227A33D-AA8A-4D1E-8285-43A7ACCE4B12-AUTO-TARGET" dmnElementRef="_6227A33D-AA8A-4D1E-8285-43A7ACCE4B12">
         <di:waypoint x="264" y="444"/>
