@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_354B17AC-6289-416D-9C47-9B3486287DB9" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_123B9853-3E6F-4598-B734-353C431005D7" id="_615EBA75-5EAB-4D33-BD82-3A042CE174F8" name="claim-complexity" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_354B17AC-6289-416D-9C47-9B3486287DB9">
+  <dmn:extensionElements/>
+  <dmn:import id="_C7272277-E257-4C0C-8C23-A986C843488A" name="ClaimResponse" namespace="https://kiegroup.org/dmn/_123B9853-3E6F-4598-B734-353C431005D7" locationURI="claim-response.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:itemDefinition id="_F8BFFA6C-97B4-4420-8578-AB1C5D0A8A9E" name="responses" isCollection="true">
+    <dmn:typeRef>string</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_5FA3A39B-0267-40C5-A84E-162C7B197B18" name="Claims">
+    <dmn:extensionElements/>
+    <dmn:variable id="_1E2C8EE4-3892-4BF3-94B7-15923E284ABA" name="Claims" typeRef="ClaimResponse.claims"/>
+  </dmn:inputData>
+  <dmn:decision id="_456253E6-46ED-4428-B981-173A5ACC1F40" name="Claim Complexity">
+    <dmn:extensionElements/>
+    <dmn:variable id="_F6A3253B-6E7C-4989-8D28-FB122FE105B7" name="Claim Complexity" typeRef="Any"/>
+    <dmn:informationRequirement id="_BD1415BF-E68E-4F92-8A45-20C4857EF68D">
+      <dmn:requiredInput href="#_5FA3A39B-0267-40C5-A84E-162C7B197B18"/>
+    </dmn:informationRequirement>
+    <dmn:knowledgeRequirement id="_571D37DE-A3BE-4E8B-BE7B-CCE684A20B2D">
+      <dmn:requiredKnowledge href="https://kiegroup.org/dmn/_123B9853-3E6F-4598-B734-353C431005D7#_150D0D9C-46BD-4A94-A63A-BEFB9E2A46CA"/>
+    </dmn:knowledgeRequirement>
+    <dmn:context id="_0F5A4E47-1B06-47E2-A75D-A4DBC14DBC33">
+      <dmn:contextEntry>
+        <dmn:variable id="_F42A61E2-BF87-4B69-8770-230B0D9962C0" name="response" typeRef="Any"/>
+        <dmn:literalExpression id="_62F01820-D7AF-4C13-ADC0-38F3456DB83E">
+          <dmn:text>for claim in Claims
+  return ClaimResponse.Claim Service(claim)</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_17A04F62-81FE-4559-BFEB-EB3F19856990">
+          <dmn:text>response</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_070C2240-A5A9-408B-81F6-4A398FA3EC52" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_0F5A4E47-1B06-47E2-A75D-A4DBC14DBC33">
+            <kie:width>50</kie:width>
+            <kie:width>224</kie:width>
+            <kie:width>517</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_62F01820-D7AF-4C13-ADC0-38F3456DB83E">
+            <kie:width>517</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_17A04F62-81FE-4559-BFEB-EB3F19856990">
+            <kie:width>517</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_150D0D9C-46BD-4A94-A63A-BEFB9E2A46CA" dmnElementRef="included1:_150D0D9C-46BD-4A94-A63A-BEFB9E2A46CA" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="398" y="133" width="281" height="150"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="398" y="233"/>
+          <di:waypoint x="679" y="233"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_5FA3A39B-0267-40C5-A84E-162C7B197B18" dmnElementRef="_5FA3A39B-0267-40C5-A84E-162C7B197B18" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="226" y="313" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_456253E6-46ED-4428-B981-173A5ACC1F40" dmnElementRef="_456253E6-46ED-4428-B981-173A5ACC1F40" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="226" y="183" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_BD1415BF-E68E-4F92-8A45-20C4857EF68D-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_BD1415BF-E68E-4F92-8A45-20C4857EF68D">
+        <di:waypoint x="276" y="313"/>
+        <di:waypoint x="276" y="233"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_571D37DE-A3BE-4E8B-BE7B-CCE684A20B2D-AUTO-TARGET" dmnElementRef="_571D37DE-A3BE-4E8B-BE7B-CCE684A20B2D">
+        <di:waypoint x="538.5" y="208"/>
+        <di:waypoint x="326" y="208"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
